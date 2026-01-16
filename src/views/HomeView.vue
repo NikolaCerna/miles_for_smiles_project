@@ -1,9 +1,4 @@
-<script setup>
-import TheWelcome from '../components/TheWelcome.vue'
-</script>
-
 <template>
-  <main>
-    <TheWelcome />
-  </main>
+  <h1>Miles for Smiles</h1>
+  <p>Charitatívny beh pre dobrú vec</p>
 </template>
