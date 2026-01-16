@@ -25,6 +25,11 @@
         <p>
           Pridaj svoje kilometre a pomôž dobrej veci.
         </p>
+        <p class="available-km">
+            Dostupné kilometre:
+            <strong>{{ user.availableKm }} km</strong>
+        </p>
+
 
         <input
           type="number"
@@ -49,6 +54,8 @@
 <script>
 import { useEventStore } from '@/stores/eventStore'
 import ProgressBar from '@/components/ProgressBar.vue'
+import { useUserStore } from '@/stores/userStore'
+
 
 export default {
   name: 'EventDetailView',
@@ -61,19 +68,32 @@ export default {
   ProgressBar
   },
   computed: {
-    event() {
-      const store = useEventStore()
-      return store.getEventById(this.$route.params.id)
-    }
+  event() {
+    const store = useEventStore()
+    return store.getEventById(this.$route.params.id)
   },
+  user() {
+    return useUserStore()
+  }
+},
+
   methods: {
     addKm() {
-      if (this.kilometers > 0) {
-        const store = useEventStore()
-        store.addKilometers(this.event.id, this.kilometers)
-        this.kilometers = 0
-      }
-    }
+        if (this.kilometers > 0) {
+            const eventStore = useEventStore()
+            const userStore = useUserStore()
+
+            const success = userStore.useKilometers(this.kilometers)
+
+            if (success) {
+            eventStore.addKilometers(this.event.id, this.kilometers)
+            this.kilometers = 0
+            } else {
+            alert('Nemáš dostatok dostupných kilometrov.')
+            }
+        }
+     }
+
   }
 }
 </script>
@@ -136,5 +156,16 @@ button:hover {
     grid-template-columns: 1fr;
   }
 }
+
+.available-km {
+  margin-bottom: 0.5rem;
+  font-size: 0.9rem;
+  color: #333;
+}
+
+.available-km strong {
+  color: #4CAF50;
+}
+
 
 </style>

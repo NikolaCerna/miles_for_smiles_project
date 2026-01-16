@@ -1,12 +1,7 @@
 <template>
   <div class="page">
     <h1>Zapoj sa</h1>
-
-    <p class="intro">
-      Zapojenie do projektu Miles for Smiles je jednoduché.
-      Nepotrebuješ špeciálnu aplikáciu ani registráciu –
-      stačí chuť hýbať sa a pomáhať.
-    </p>
+    <UserProfile :availableKm="250" />
 
     <div class="steps">
       <div class="step">
@@ -41,12 +36,16 @@
 
 <script>
 import { RouterLink } from 'vue-router'
+import UserProfile from '@/components/UserProfile.vue'
+
 
 export default {
   name: 'JoinView',
   components: {
-    RouterLink
-  }
+  RouterLink,
+  UserProfile
+}
+
 }
 </script>
 
@@ -70,7 +69,7 @@ export default {
 .cta-button {
   display: inline-block;
   background-color: #4CAF50;
-  color: white;
+  color: rgb(255, 255, 255);
   padding: 0.7rem 1.5rem;
   border-radius: 8px;
   text-decoration: none;
