@@ -1,3 +1,83 @@
 <template>
-  <h1>Zapoj sa</h1>
+  <div class="page">
+    <h1>Zapoj sa</h1>
+
+    <p class="intro">
+      Zapojenie do projektu Miles for Smiles je jednoduché.
+      Nepotrebuješ špeciálnu aplikáciu ani registráciu –
+      stačí chuť hýbať sa a pomáhať.
+    </p>
+
+    <div class="steps">
+      <div class="step">
+        <h3>1️⃣ Vyber si beh</h3>
+        <p>
+          Pozri si aktuálne charitatívne výzvy a vyber si tú,
+          do ktorej sa chceš zapojiť.
+        </p>
+      </div>
+
+      <div class="step">
+        <h3>2️⃣ Behaj vlastným tempom</h3>
+        <p>
+          Behaj kedykoľvek a kdekoľvek. Každý kilometer sa počíta.
+        </p>
+      </div>
+
+      <div class="step">
+        <h3>3️⃣ Pridaj kilometre</h3>
+        <p>
+          Na stránke konkrétneho behu jednoducho zadáš počet
+          kilometrov, ktoré si odbehla.
+        </p>
+      </div>
+    </div>
+
+    <RouterLink to="/events" class="cta-button">
+      Pozrieť bežecké výzvy
+    </RouterLink>
+  </div>
 </template>
+
+<script>
+import { RouterLink } from 'vue-router'
+
+export default {
+  name: 'JoinView',
+  components: {
+    RouterLink
+  }
+}
+</script>
+
+<style scoped>
+.intro {
+  max-width: 700px;
+  margin-bottom: 2rem;
+}
+
+.steps {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 2rem;
+  margin-bottom: 2rem;
+}
+
+.step {
+  max-width: 300px;
+}
+
+.cta-button {
+  display: inline-block;
+  background-color: #4CAF50;
+  color: white;
+  padding: 0.7rem 1.5rem;
+  border-radius: 8px;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+.cta-button:hover {
+  background-color: #43a047;
+}
+</style>

@@ -20,7 +20,6 @@ export default {
 </script>
 
 <style>
-/* globálny layout */
 #app {
   min-height: 100vh;
   display: flex;

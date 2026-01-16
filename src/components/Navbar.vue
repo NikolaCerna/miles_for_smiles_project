@@ -1,9 +1,19 @@
 <template>
-  <nav>
-    <RouterLink to="/">Home</RouterLink>
-    <RouterLink to="/events">Behy</RouterLink>
-    <RouterLink to="/join">Zapoj sa</RouterLink>
-    <RouterLink to="/about">O projekte</RouterLink>
+  <nav class="navbar">
+    <div class="navbar-content">
+      <!-- Logo / názov -->
+      <RouterLink to="/" class="logo">
+        Miles for Smiles
+      </RouterLink>
+
+      <!-- Menu -->
+      <div class="nav-links">
+        <RouterLink to="/" exact-active-class="active">Home</RouterLink>
+        <RouterLink to="/events" exact-active-class="active">Behy</RouterLink>
+        <RouterLink to="/join" exact-active-class="active">Zapoj sa</RouterLink>
+        <RouterLink to="/about" exact-active-class="active">O projekte</RouterLink>
+      </div>
+    </div>
   </nav>
 </template>
 
@@ -19,9 +29,60 @@ export default {
 </script>
 
 <style scoped>
-nav {
-  padding: 1rem;
+/* celý navbar */
+.navbar {
+  background-color: #4CAF50; /* zelená */
+  padding: 1rem 0;
+}
+
+/* vnútorný obsah */
+.navbar-content {
+  width: 100%;
+  padding: 0 2rem;
+
   display: flex;
-  gap: 1rem;
+  justify-content: space-between;
+  align-items: center;
+}
+
+
+/* logo */
+.logo {
+  font-size: 1.3rem;
+  font-weight: bold;
+  color: white;
+  text-decoration: none;
+}
+
+/* odkazy */
+.nav-links {
+  display: flex;
+  gap: 1.5rem;
+}
+
+.nav-links a {
+  color: white;
+  text-decoration: none;
+  font-weight: 500;
+  position: relative;
+}
+
+/* hover efekt */
+.nav-links a:hover {
+  color: #FFEB3B; /* jemná žltá/oranžová */
+}
+
+/* aktívna stránka */
+.nav-links a.active {
+  border-bottom: 2px solid #FFEB3B;
+  padding-bottom: 2px;
+}
+
+/* responzivita */
+@media (max-width: 600px) {
+  .navbar-content {
+    flex-direction: column;
+    gap: 0.8rem;
+  }
 }
 </style>

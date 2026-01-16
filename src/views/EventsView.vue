@@ -1,10 +1,10 @@
 <template>
-  <div>
+  <div class="page">
     <h1>Behy a výzvy</h1>
-
     <EventList :events="events" />
   </div>
 </template>
+
 
 <script>
 import { useEventStore } from '@/stores/eventStore'
