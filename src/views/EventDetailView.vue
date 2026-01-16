@@ -38,9 +38,10 @@
           placeholder="Zadaj počet km"
         />
 
-        <button @click="addKm">
-          Pridať kilometre
+        <button @click="addKm" :disabled="isDisabled" >
+        Pridať kilometre
         </button>
+
       </div>
     </div>
   </div>
@@ -74,7 +75,15 @@ export default {
   },
   user() {
     return useUserStore()
-  }
+  },
+  isDisabled() {
+  return (
+    this.kilometers <= 0 ||
+    this.kilometers > this.user.availableKm ||
+    this.user.availableKm === 0
+  )
+}
+
 },
 
   methods: {
@@ -166,6 +175,11 @@ button:hover {
 .available-km strong {
   color: #4CAF50;
 }
+
+button:disabled {
+  opacity: 0.6;
+}
+
 
 
 </style>
