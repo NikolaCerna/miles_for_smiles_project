@@ -1,26 +1,15 @@
 <template>
   <div v-if="event">
     <h1>{{ event.title }}</h1>
-
     <p>{{ event.description }}</p>
     <p><strong>Dátum:</strong> {{ event.date }}</p>
     <p><strong>Celkový počet kilometrov:</strong> {{ event.totalKm }} km</p>
-
+    <ProgressBar :current="event.totalKm" :goal="300"/>
     <hr />
-
     <h3>Zapoj sa</h3>
-
-    <input
-      type="number"
-      v-model.number="kilometers"
-      placeholder="Zadaj počet km"
-    />
-
-    <button @click="addKm">
-      Pridať kilometre
-    </button>
+    <input type="number" v-model.number="kilometers" placeholder="Zadaj počet km" />
+    <button @click="addKm"> Pridať kilometre </button>
   </div>
-
   <div v-else>
     <p>Beh sa nenašiel.</p>
   </div>
@@ -28,23 +17,24 @@
 
 <script>
 import { useEventStore } from '@/stores/eventStore'
+import ProgressBar from '@/components/ProgressBar.vue'
 
 export default {
   name: 'EventDetailView',
-
   data() {
     return {
       kilometers: 0
     }
   },
-
+  components: {
+  ProgressBar
+  },
   computed: {
     event() {
       const store = useEventStore()
       return store.getEventById(this.$route.params.id)
     }
   },
-
   methods: {
     addKm() {
       if (this.kilometers > 0) {
