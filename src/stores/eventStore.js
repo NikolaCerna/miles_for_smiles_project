@@ -28,13 +28,11 @@ export const useEventStore = defineStore('eventStore', {
       }
     ]
   }),
-
   getters: {
     getEventById: (state) => {
       return (id) => state.events.find(event => event.id === Number(id))
     }
   },
-
   actions: {
     addKilometers(eventId, km) {
       const event = this.events.find(e => e.id === eventId)
@@ -43,7 +41,6 @@ export const useEventStore = defineStore('eventStore', {
         this.saveToStorage()
       }
     },
-
     saveToStorage() {
       localStorage.setItem(STORAGE_KEY, JSON.stringify(this.events))
     }

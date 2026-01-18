@@ -1,20 +1,9 @@
 <template>
   <div class="profile-card">
     <h3>Môj profil</h3>
-
     <p class="name">👤 Používateľ: <strong>Nikola</strong></p>
-
-    <p class="km">
-      🏃‍♀️ Dostupné kilometre:
-      <strong>{{ user.availableKm }} km</strong>
-    </p>
-
-
-    <p class="note">
-      Tento profil slúži ako koncept používateľského účtu.
-      V reálnej aplikácii by boli kilometre synchronizované
-      z fitness aplikácií (napr. Garmin, Strava).
-    </p>
+    <p class="km"> Dostupné kilometre: <strong>{{ user.availableKm }} km</strong></p>
+    <p class="note"> Tento profil slúži ako koncept používateľského účtu.V reálnej aplikácii by boli kilometre synchronizované z fitness aplikácií (napr. Garmin, Strava).</p>
   </div>
 </template>
 
@@ -23,7 +12,6 @@ import { useUserStore } from '@/stores/userStore'
 
 export default {
   name: 'UserProfile',
-
   computed: {
     user() {
       return useUserStore()

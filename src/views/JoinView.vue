@@ -2,35 +2,21 @@
   <div class="page">
     <h1>Zapoj sa</h1>
     <UserProfile :availableKm="250" />
-
     <div class="steps">
       <div class="step">
         <h3>1️⃣ Vyber si beh</h3>
-        <p>
-          Pozri si aktuálne charitatívne výzvy a vyber si tú,
-          do ktorej sa chceš zapojiť.
-        </p>
+        <p>Pozri si aktuálne charitatívne výzvy a vyber si tú, do ktorej sa chceš zapojiť.</p>
       </div>
-
       <div class="step">
         <h3>2️⃣ Behaj vlastným tempom</h3>
-        <p>
-          Behaj kedykoľvek a kdekoľvek. Každý kilometer sa počíta.
-        </p>
+        <p>Behaj kedykoľvek a kdekoľvek. Každý kilometer sa počíta.</p>
       </div>
-
       <div class="step">
         <h3>3️⃣ Pridaj kilometre</h3>
-        <p>
-          Na stránke konkrétneho behu jednoducho zadáš počet
-          kilometrov, ktoré si odbehla.
-        </p>
+        <p>Na stránke konkrétneho behu jednoducho zadáš počet kilometrov, ktoré si odbehla.</p>
       </div>
     </div>
-
-    <RouterLink to="/events" class="cta-button">
-      Pozrieť bežecké výzvy
-    </RouterLink>
+    <RouterLink to="/events" class="cta-button">Pozrieť bežecké výzvy</RouterLink>
   </div>
 </template>
 
@@ -38,14 +24,12 @@
 import { RouterLink } from 'vue-router'
 import UserProfile from '@/components/UserProfile.vue'
 
-
 export default {
   name: 'JoinView',
   components: {
-  RouterLink,
-  UserProfile
-}
-
+    RouterLink,
+    UserProfile
+  }
 }
 </script>
 

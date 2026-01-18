@@ -1,45 +1,30 @@
 <template>
-  <!-- HERO -->
   <div class="hero">
     <div class="hero-content">
       <h1>Miles for Smiles</h1>
-      <p>
-        Charitatívny beh, kde každý kilometer pomáha
-        priniesť úsmev tým, ktorí ho najviac potrebujú.
-      </p>
-
-      <RouterLink to="/events" class="hero-button">
-        Pozrieť výzvy
-      </RouterLink>
+      <p>Charitatívny beh, kde každý kilometer pomáha priniesť úsmev tým, ktorí ho najviac potrebujú.</p>
+      <RouterLink to="/events" class="hero-button"> Pozrieť výzvy </RouterLink>
     </div>
   </div>
-
-  <!-- AKO TO FUNGUJE -->
   <section class="section light">
     <h2>Ako to funguje?</h2>
-
     <div class="steps">
       <div class="step">
         <h3>1️⃣ Vyber si výzvu</h3>
         <p>Vyber si charitatívny beh, do ktorého sa chceš zapojiť.</p>
       </div>
-
       <div class="step">
         <h3>2️⃣ Behaj kilometre</h3>
         <p>Každý kilometer, ktorý odbehneš, sa počíta.</p>
       </div>
-
       <div class="step">
         <h3>3️⃣ Pomáhaj úsmevom</h3>
         <p>Tvoje kilometre pomáhajú tým, ktorí to najviac potrebujú.</p>
       </div>
     </div>
   </section>
-
-  <!-- PREČO SA ZAPOJIŤ -->
   <section class="section dark">
     <h2>Prečo sa zapojiť?</h2>
-
     <div class="benefits">
       <p>💚 Spojíš pohyb s pomocou</p>
       <p>😊 Každý kilometer má zmysel</p>
@@ -48,7 +33,6 @@
     </div>
   </section>
 </template>
-
 
 <script>
 import { RouterLink } from 'vue-router'

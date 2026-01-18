@@ -5,7 +5,6 @@ export const useUserStore = defineStore('user', {
     name: 'Hosť',
     availableKm: Number(localStorage.getItem('user_km')) || 250
   }),
-
   actions: {
     useKilometers(km) {
       if (km <= this.availableKm) {

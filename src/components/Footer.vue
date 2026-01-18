@@ -1,7 +1,7 @@
 <template>
   <footer class="footer">
     <p>© 2026 Miles for Smiles</p>
-    <p>Charitatívny beh pre dobrú vec 💚</p>
+    <p>Charitatívny beh pre dobrú vec</p>
   </footer>
 </template>
 

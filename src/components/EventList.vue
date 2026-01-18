@@ -1,13 +1,6 @@
 <template>
   <div class="event-list">
-    <EventCard
-      v-for="event in events"
-      :key="event.id"
-      :id="event.id"
-      :title="event.title"
-      :description="event.description"
-      :date="event.date"
-    />
+    <EventCard v-for="event in events" :key="event.id" :id="event.id" :title="event.title" :description="event.description" :date="event.date"/>
   </div>
 </template>
 
@@ -16,11 +9,9 @@ import EventCard from '@/components/EventCard.vue'
 
 export default {
   name: 'EventList',
-
   components: {
     EventCard
   },
-
   props: {
     events: {
       type: Array,

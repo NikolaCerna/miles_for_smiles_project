@@ -1,12 +1,7 @@
 <template>
   <nav class="navbar">
     <div class="navbar-content">
-      <!-- Logo / názov -->
-      <RouterLink to="/" class="logo">
-        Miles for Smiles
-      </RouterLink>
-
-      <!-- Menu -->
+      <RouterLink to="/" class="logo"> Miles for Smiles </RouterLink>
       <div class="nav-links">
         <RouterLink to="/" exact-active-class="active">Home</RouterLink>
         <RouterLink to="/events" exact-active-class="active">Behy</RouterLink>
@@ -45,7 +40,6 @@ export default {
   align-items: center;
 }
 
-
 /* logo */
 .logo {
   font-size: 1.3rem;
@@ -69,12 +63,12 @@ export default {
 
 /* hover efekt */
 .nav-links a:hover {
-  color: #FFEB3B; /* jemná žltá/oranžová */
+  color: #033501a6; /* jemná žltá/oranžová */
 }
 
 /* aktívna stránka */
 .nav-links a.active {
-  border-bottom: 2px solid #FFEB3B;
+  border-bottom: 2px solid #03350165;
   padding-bottom: 2px;
 }
 

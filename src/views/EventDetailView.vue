@@ -1,56 +1,27 @@
 <template>
   <div class="page" v-if="event">
     <h1 class="title">{{ event.title }}</h1>
-
     <div class="detail-grid">
-      <!-- INFO BOX -->
       <div class="card">
         <h3>O behu</h3>
-
         <p>{{ event.description }}</p>
-
         <p><strong>Dátum:</strong> {{ event.date }}</p>
         <p><strong>Celkový počet kilometrov:</strong> {{ event.totalKm }} km</p>
-
-        <ProgressBar
-          :current="event.totalKm"
-          :goal="300"
-        />
+        <ProgressBar :current="event.totalKm" :goal="1000"/>
       </div>
-
-      <!-- ZAPOJ SA BOX -->
       <div class="card highlight">
         <h3>Zapoj sa</h3>
-
-        <p>
-          Pridaj svoje kilometre a pomôž dobrej veci.
-        </p>
-        <p class="available-km">
-            Dostupné kilometre:
-            <strong>{{ user.availableKm }} km</strong>
-        </p>
-
-
-        <input
-          type="number"
-          min="1"
-          v-model.number="kilometers"
-          placeholder="Zadaj počet km"
-        />
-
-        <button @click="addKm" :disabled="isDisabled" >
-        Pridať kilometre
-        </button>
-
+        <p>Pridaj svoje kilometre a pomôž dobrej veci.</p>
+        <p class="available-km"> Dostupné kilometre: <strong>{{ user.availableKm }} km</strong></p>
+        <input type="number" min="1" v-model.number="kilometers" placeholder="Zadaj počet km"/>
+        <button @click="addKm" :disabled="isDisabled" >Pridať kilometre</button>
       </div>
     </div>
   </div>
-
   <div class="page" v-else>
     <p>Beh sa nenašiel.</p>
   </div>
 </template>
-
 
 <script>
 import { useEventStore } from '@/stores/eventStore'
@@ -66,26 +37,24 @@ export default {
     }
   },
   components: {
-  ProgressBar
+    ProgressBar
   },
   computed: {
-  event() {
-    const store = useEventStore()
-    return store.getEventById(this.$route.params.id)
+    event() {
+      const store = useEventStore()
+      return store.getEventById(this.$route.params.id)
+    },
+    user() {
+      return useUserStore()
+    },
+    isDisabled() {
+      return (
+        this.kilometers <= 0 ||
+        this.kilometers > this.user.availableKm ||
+        this.user.availableKm === 0
+      )
+    }
   },
-  user() {
-    return useUserStore()
-  },
-  isDisabled() {
-  return (
-    this.kilometers <= 0 ||
-    this.kilometers > this.user.availableKm ||
-    this.user.availableKm === 0
-  )
-}
-
-},
-
   methods: {
     addKm() {
         if (this.kilometers > 0) {
@@ -102,7 +71,6 @@ export default {
             }
         }
      }
-
   }
 }
 </script>
