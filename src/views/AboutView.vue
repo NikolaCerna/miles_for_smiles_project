@@ -21,15 +21,8 @@
       <p>Naším cieľom je budovať komunitu ľudí, ktorí si uvedomujú, že aj malé každodenné aktivity môžu pomôcť tým, ktorí to najviac potrebujú.</p>
     </section>
     <img src="/about-community.jpg" alt="Komunita a pomoc druhým" class="inline-image"/>
-    <section class="faq">
-      <h2>Časté otázky</h2>
-      <FaqItem v-for="item in faq" :key="item.id" :question="item.question">
-        <template v-if="item.type === 'text'">{{ item.answer }}</template>
-        <template v-else-if="item.type === 'address'">Nájdete nás na adrese: <strong>{{ contactInfo.address }}</strong></template>
-        <template v-else-if="item.type === 'hours'">Otvorené máme: <strong>{{ contactInfo.pickupHours }}</strong></template>
-        <template v-else-if="item.type === 'contact'">📧 {{ contactInfo.email }} <br />📞 {{ contactInfo.phone }}</template>
-      </FaqItem>
-    </section>
+    <RouterLink to="/about/faq" class="faq-link">Zobraziť časté otázky →</RouterLink>
+    <router-view />
   </div>
 </template>
 

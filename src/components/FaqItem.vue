@@ -33,4 +33,10 @@ export default {
 h4:hover {
   color: #43a047;
 }
+
+.faq-item {
+  margin-top: 0.5rem;
+  margin-bottom: 1.5rem;
+}
+
 </style>
