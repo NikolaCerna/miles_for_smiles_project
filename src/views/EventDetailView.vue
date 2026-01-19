@@ -73,20 +73,21 @@ export default {
   },
   methods: {
     addKm() {
-        if (this.kilometers > 0) {
-            const eventStore = useEventStore()
-            const userStore = useUserStore()
+      if (this.kilometers <= 0) return
 
-            const success = userStore.useKilometers(this.kilometers)
+      const eventStore = useEventStore()
+      const userStore = useUserStore()
 
-            if (success) {
-            eventStore.addKilometers(this.event.slug, this.kilometers)
-            this.kilometers = 0
-            } else {
-            alert('Nemáš dostatok dostupných kilometrov.')
-            }
-        }
-     }
+      const success = userStore.useKilometers(this.kilometers)
+
+      if (success) {
+        eventStore.addKilometers(this.event.slug, this.kilometers)
+        this.kilometers = 0
+        alert('Ďakujeme 💚 Tvoje kilometre boli pridané.')
+      } else {
+        alert('Nemáš dostatok dostupných kilometrov.')
+      }
+    }
   }
 }
 </script>
