@@ -8,9 +8,9 @@
     <template v-else-if="item.type === 'contact'">📧 {{ contactInfo.email }} <br />📞 {{ contactInfo.phone }}</template>
     </FaqItem>
   </section>
-  <RouterLink to="/about" class="back-link">
+  <button class="back" @click="$router.back()">
     ← Skryť časté otázky
-  </RouterLink>
+  </button>
 </template>
 
 <script>
@@ -26,3 +26,17 @@ export default {
   }
 }
 </script>
+
+<style>
+    .back {
+  background: none;
+  border: none;
+  padding: 0;
+  width: auto;
+
+  color: #4CAF50;
+  font-size: 0.95rem;
+  cursor: pointer;
+  margin-bottom: 1rem;
+}
+</style>

@@ -1,5 +1,8 @@
 <template>
   <div class="page" v-if="event">
+    <button class="back" @click="$router.back()">
+      ← Späť
+    </button>
     <h1 class="title">{{ event.title }}</h1>
     <div class="detail-grid">
       <div class="card">
@@ -145,10 +148,6 @@ button {
   cursor: pointer;
 }
 
-button:hover {
-  background-color: #43a047;
-}
-
 /* RESPONSIVE */
 @media (max-width: 800px) {
   .detail-grid {
@@ -170,6 +169,17 @@ button:disabled {
   opacity: 0.6;
 }
 
+.back {
+  background: none;
+  border: none;
+  padding: 0;
+  width: auto;
+
+  color: #4CAF50;
+  font-size: 0.95rem;
+  cursor: pointer;
+  margin-bottom: 1rem;
+}
 
 
 </style>
