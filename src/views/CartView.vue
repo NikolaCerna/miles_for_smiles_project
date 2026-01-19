@@ -43,8 +43,11 @@ export default {
   },
   methods: {
     pay() {
-      this.orderSent = true
-      this.cartStore.clearCart()
+        this.orderSent = true
+        this.cartStore.clearCart()
+        setTimeout(() => {
+            this.$router.push('/')
+        }, 2000)
     }
   }
 }
