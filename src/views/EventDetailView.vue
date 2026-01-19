@@ -16,6 +16,14 @@
         <input type="number" min="1" v-model.number="kilometers" placeholder="Zadaj počet km"/>
         <button @click="addKm" :disabled="isDisabled" >Pridať kilometre</button>
       </div>
+      <v-alert
+      v-if="showThanks"
+      type="success"
+      variant="tonal"
+      class="mb-4"
+    >
+      💚 Ďakujeme! Tvoje kilometre boli úspešne pridané.
+    </v-alert>
     </div>
   </div>
 </template>
@@ -30,7 +38,8 @@ export default {
   name: 'EventDetailView',
   data() {
     return {
-      kilometers: 0
+      kilometers: 0,
+      showThanks: false
     }
   },
   components: {
@@ -83,7 +92,11 @@ export default {
       if (success) {
         eventStore.addKilometers(this.event.slug, this.kilometers)
         this.kilometers = 0
-        alert('Ďakujeme 💚 Tvoje kilometre boli pridané.')
+
+        this.showThanks = true
+        setTimeout(() => {
+          this.showThanks = false
+        }, 3000)
       } else {
         alert('Nemáš dostatok dostupných kilometrov.')
       }
