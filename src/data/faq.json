@@ -1,0 +1,23 @@
+[
+  {
+    "id": 1,
+    "question": "Ako môžem pomôcť?",
+    "type": "text",
+    "answer": "Pomôcť môžeš zaznamenávaním svojich kilometrov v rámci charitatívnych výziev."
+  },
+  {
+    "id": 2,
+    "question": "Kde nás môžete nájsť?",
+    "type": "address"
+  },
+  {
+    "id": 3,
+    "question": "Aké sú vaše otváracie hodiny?",
+    "type": "hours"
+  },
+  {
+    "id": 4,
+    "question": "Ako vás môžem kontaktovať?",
+    "type": "contact"
+  }
+]

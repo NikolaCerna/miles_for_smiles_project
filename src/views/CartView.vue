@@ -18,8 +18,8 @@
             <h2>Spolu: {{ cartStore.totalPrice }} €</h2>
             <div class="payment-info">
               <p><strong>Spôsob platby:</strong> Dobierka</p>
-              <p><strong>Miesto vyzdvihnutia:</strong></p>
-              <p>Odberné miesto Miles for Smiles<br />Študentská 12<br />811 01 Bratislava</p>
+              <p><strong>Miesto vyzdvihnutia:</strong> {{ contactInfo.address }}</p>
+              <p><strong>Kontakt:</strong> {{ contactInfo.phone }}, {{ contactInfo.email }}</p>
             </div>
             <button class="pay" @click="pay">Zaplatiť (dobierka)</button>
         </div>
@@ -36,6 +36,7 @@ import { useCartStore } from '@/stores/cartStore'
 
 export default {
   name: 'CartView',
+  inject: ['contactInfo'],
   data() {
     return {
       orderSent: false

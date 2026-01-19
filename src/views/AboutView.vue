@@ -23,37 +23,32 @@
     <img src="/about-community.jpg" alt="Komunita a pomoc druhým" class="inline-image"/>
     <section class="faq">
       <h2>Časté otázky</h2>
-      <div class="faq-item">
-        <h4 @click="toggle(1)">Ako môžem pomôcť?</h4>
-        <p v-if="open === 1">Pomôcť môžeš jednoducho – zaznamenávaním svojich kilometrov v rámci dostupných charitatívnych výziev v aplikácii.</p>
-      </div>
-      <div class="faq-item">
-        <h4 @click="toggle(2)">Kam smeruje pomoc?</h4>
-        <p v-if="open === 2">Pomoc je symbolicky určená na podporu liečby, rehabilitácií a zlepšenia kvality života chorých detí a dospelých.</p>
-      </div>
-      <div class="faq-item">
-        <h4 @click="toggle(3)">Musím byť športovec?</h4>
-        <p v-if="open === 3">Nie. Projekt je určený pre každého, kto chce pomôcť, bez ohľadu na športový výkon alebo skúsenosti.</p>
-      </div>
+      <FaqItem v-for="item in faq" :key="item.id" :question="item.question">
+        <template v-if="item.type === 'text'">{{ item.answer }}</template>
+        <template v-else-if="item.type === 'address'">Nájdete nás na adrese: <strong>{{ contactInfo.address }}</strong></template>
+        <template v-else-if="item.type === 'hours'">Otvorené máme: <strong>{{ contactInfo.pickupHours }}</strong></template>
+        <template v-else-if="item.type === 'contact'">📧 {{ contactInfo.email }} <br />📞 {{ contactInfo.phone }}</template>
+      </FaqItem>
     </section>
   </div>
 </template>
 
 <script>
+import faq from '@/data/faq.json'
+import FaqItem from '@/components/FaqItem.vue'
+
 export default {
   name: 'AboutView',
+  components: { FaqItem },
+  inject: ['contactInfo'],
   data() {
     return {
-      open: null
-    }
-  },
-  methods: {
-    toggle(id) {
-      this.open = this.open === id ? null : id
+      faq
     }
   }
 }
 </script>
+
 
 <style scoped>
 .about {

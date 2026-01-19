@@ -1,9 +1,7 @@
-import { createRouter, createWebHistory } from 'vue-router'
+import { createRouter, createWebHistory, type RouteRecordRaw } from 'vue-router'
 import HomeView from '../views/HomeView.vue'
 
-const router = createRouter({
-  history: createWebHistory(import.meta.env.BASE_URL),
-  routes: [
+const routes: RouteRecordRaw[] = [
     {
       path: '/',
       name: 'home',
@@ -42,13 +40,17 @@ const router = createRouter({
     {
     path: '/404',
     name: 'not-found',
-    component: () => import('@/views/NotFoundView.vue')
+    component: () => import('../views/NotFoundView.vue')
   },
   {
     path: '/:pathMatch(.*)*',
     redirect: '/404'
   }
-  ],
+]
+const router = createRouter({
+  history: createWebHistory(import.meta.env.BASE_URL),
+  routes
 })
+
 
 export default router

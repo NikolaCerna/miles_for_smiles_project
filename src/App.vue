@@ -15,6 +15,17 @@ export default {
   components: {
     Navbar,
     Footer
+  },
+  provide() {
+    return {
+      contactInfo: {
+        email: 'info@milesforsmiles.sk',
+        phone: '+421 900 123 456',
+        address: 'Dobrovoľnícka 12, 811 09 Bratislava',
+        pickupPlace: 'Dobrovoľnícka 12, Bratislava',
+        pickupHours: 'Po–Pi: 10:00 – 18:00'
+      }
+    }
   }
 }
 </script>
