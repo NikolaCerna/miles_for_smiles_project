@@ -3,7 +3,7 @@
     <h3>{{ title }}</h3>
     <p class="description"> {{ description }} </p>
     <p class="date"> {{ date }} </p>
-    <RouterLink :to="`/events/${id}`" class="detail-link"> Zobraziť detail </RouterLink>
+    <RouterLink :to="`/events/${slug}`" class="detail-link"> Zobraziť detail </RouterLink>
   </div>
 </template>
 
@@ -16,8 +16,8 @@ export default {
     RouterLink
   },
   props: {
-    id: {
-      type: Number,
+    slug: {
+      type: String,
       required: true
     },
     title: {

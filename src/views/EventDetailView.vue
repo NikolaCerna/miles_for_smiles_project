@@ -42,7 +42,7 @@ export default {
   computed: {
     event() {
       const store = useEventStore()
-      return store.getEventById(this.$route.params.id)
+      return store.getEventBySlug(this.$route.params.slug)
     },
     user() {
       return useUserStore()
@@ -64,7 +64,7 @@ export default {
             const success = userStore.useKilometers(this.kilometers)
 
             if (success) {
-            eventStore.addKilometers(this.event.id, this.kilometers)
+            eventStore.addKilometers(this.event.slug, this.kilometers)
             this.kilometers = 0
             } else {
             alert('Nemáš dostatok dostupných kilometrov.')
