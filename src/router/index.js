@@ -28,18 +28,6 @@ const router = createRouter({
       path: '/about',
       name: 'about',
       component: () => import('../views/AboutView.vue'),
-      children: [
-        {
-          path: '',
-          name: 'about-info',
-          component: () => import('../views/about/AboutInfo.vue')
-        },
-        {
-          path: 'faq',
-          name: 'about-faq',
-          component: () => import('../views/about/AboutFaq.vue')
-        }
-      ]
     },
     {
       path: '/support',
