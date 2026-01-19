@@ -7,6 +7,12 @@
         <RouterLink to="/events" exact-active-class="active">Behy</RouterLink>
         <RouterLink to="/join" exact-active-class="active">Zapoj sa</RouterLink>
         <RouterLink to="/about" exact-active-class="active">O projekte</RouterLink>
+        <router-link to="/support">Podporte nás</router-link>
+
+        <router-link to="/cart" class="cart">
+          🛒 {{ cartStore.totalItems }}
+        </router-link>
+
       </div>
     </div>
   </nav>
@@ -14,11 +20,20 @@
 
 <script>
 import { RouterLink } from 'vue-router'
+import { useCartStore } from '@/stores/cartStore'
 
 export default {
   name: 'Navbar',
   components: {
     RouterLink
+  },
+  computed: {
+    cartStore() {
+      return useCartStore()
+    },
+    totalItems() {
+      return this.cartStore.totalItems
+    }
   }
 }
 </script>
