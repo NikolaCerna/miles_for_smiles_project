@@ -55,6 +55,17 @@ export default {
       )
     }
   },
+  watch: {
+    kilometers(newValue) {
+      if (newValue < 0) {
+        this.kilometers = 0
+      }
+
+      if (newValue > this.user.availableKm) {
+        this.kilometers = this.user.availableKm
+      }
+    }
+  },
   methods: {
     addKm() {
         if (this.kilometers > 0) {
