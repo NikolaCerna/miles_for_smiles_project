@@ -1,30 +1,30 @@
 [
   {
     "id": 1,
-    "name": "Miles for Smiles Tričko",
+    "name": "Miles for Smiles tričko",
+    "description": "Charitatívne tričko, ktorým podporíš chorých.",
     "price": 20,
-    "image": "tshirt.png",
-    "description": "Charitatívne tričko na podporu projektu Miles for Smiles."
+    "image": "/merch/tshirt-miles-for-smiles.png"
   },
   {
     "id": 2,
-    "name": "Run for Good Čiapka",
-    "price": 10,
-    "image": "cap.png",
-    "description": "Športová čiapka vhodná na beh aj bežné nosenie."
+    "name": "Run for Good šiltovka",
+    "description": "Bežecká šiltovka s charitatívnym posolstvom.",
+    "price": 15,
+    "image": "/merch/run-for-good-cap.png"
   },
   {
     "id": 3,
-    "name": "Smile Bag Taška",
-    "price": 8,
-    "image": "bag.png",
-    "description": "Ekologická plátená taška s charitatívnym motívom."
+    "name": "Smile Bag - tote taška",
+    "description": "Plátená taška na každý deň.",
+    "price": 10,
+    "image": "/merch/smile-bag.png"
   },
   {
     "id": 4,
-    "name": "Hydration for Hope Fľaša",
-    "price": 5,
-    "image": "bottle.png",
-    "description": "Športová fľaša na vodu."
+    "name": "Hydration for Hope fľaša",
+    "description": "Opakovateľne použiteľná fľaša na vodu.",
+    "price": 12,
+    "image": "/merch/hydration-for-hope-bottle.png"
   }
 ]

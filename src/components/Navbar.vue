@@ -46,6 +46,9 @@ export default {
 .navbar {
   background-color: #4CAF50; /* zelená */
   padding: 1rem 0;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
 }
 
 /* vnútorný obsah */
