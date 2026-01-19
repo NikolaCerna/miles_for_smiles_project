@@ -8,10 +8,13 @@
         <RouterLink to="/join" exact-active-class="active">Zapoj sa</RouterLink>
         <RouterLink to="/about" exact-active-class="active">O projekte</RouterLink>
         <router-link to="/support">Podporte nás</router-link>
-
         <router-link to="/cart" class="cart">
-          🛒 {{ cartStore.totalItems }}
+          🛒
+          <span v-if="totalItems > 0" class="badge">
+            {{ totalItems }}
+          </span>
         </router-link>
+
 
       </div>
     </div>
@@ -94,4 +97,21 @@ export default {
     gap: 0.8rem;
   }
 }
+
+.cart {
+  position: relative;
+}
+
+.badge {
+  position: absolute;
+  top: -6px;
+  right: -12px;
+  background-color: #af4c4c;
+  color: white;
+  border-radius: 40%;
+  padding: 0.5px 4px;
+  font-size: 0.75rem;
+  font-weight: bold;
+}
+
 </style>
