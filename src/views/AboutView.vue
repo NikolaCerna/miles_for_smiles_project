@@ -21,7 +21,7 @@
       <p>Naším cieľom je budovať komunitu ľudí, ktorí si uvedomujú, že aj malé každodenné aktivity môžu pomôcť tým, ktorí to najviac potrebujú.</p>
     </section>
     <img src="/about-community.jpg" alt="Komunita a pomoc druhým" class="inline-image"/>
-    <RouterLink to="/about/faq" class="faq-link">Zobraziť časté otázky →</RouterLink>
+    <RouterLink v-if="$route.name !== 'about-faq'" to="/about/faq" class="faq-link">Zobraziť časté otázky →</RouterLink>
     <router-view />
   </div>
 </template>

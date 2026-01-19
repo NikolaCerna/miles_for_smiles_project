@@ -27,38 +27,9 @@ export default {
 </script>
 
 <style scoped>
-.products {
-  display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
-  gap: 1.5rem;
-  margin-top: 2rem;
-}
-
-.product-card {
-  background: white;
-  color: black;
-  padding: 1.2rem;
-  border-radius: 10px;
-  box-shadow: 0 6px 15px rgba(0,0,0,0.08);
-}
-
 .price {
   font-weight: bold;
   margin: 0.5rem 0;
-}
-
-button {
-  width: 100%;
-  background: #4CAF50;
-  color: white;
-  border: none;
-  padding: 0.5rem;
-  border-radius: 6px;
-  cursor: pointer;
-}
-
-button:hover {
-  background: #43a047;
 }
 
 .products {
