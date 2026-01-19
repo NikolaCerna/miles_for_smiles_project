@@ -1,10 +1,11 @@
 import { defineStore } from 'pinia'
+import type { Event } from '../types/event'
 
 const STORAGE_KEY = 'miles_for_smiles_events'
 
 export const useEventStore = defineStore('eventStore', {
-  state: () => ({
-        events: JSON.parse(localStorage.getItem(STORAGE_KEY)) || [
+  state: (): { events: Event[] } => ({
+        events: JSON.parse(localStorage.getItem(STORAGE_KEY)|| 'null') || [
       {
         id: 1,
         title: 'Beh pre detský úsmev',
@@ -29,7 +30,6 @@ export const useEventStore = defineStore('eventStore', {
         date: '20. jún 2026',
         totalKm: 84
       },
-
       {
         id: 4,
         title: 'Kilometre pre detské srdcia',
@@ -107,18 +107,18 @@ export const useEventStore = defineStore('eventStore', {
   }),
   getters: {
     getEventBySlug: (state) => {
-      return (slug) => state.events.find(event => event.slug === slug)
+      return (slug: string): Event | undefined => state.events.find(event => event.slug === slug)
     }
   },
   actions: {
-    addKilometers(slug, km) {
+    addKilometers(slug: string, km: number) {
       const event = this.events.find(e => e.slug === slug)
       if (event) {
         event.totalKm += km
         this.saveToStorage()
       }
     },
-    saveToStorage() {
+    saveToStorage(): void {
       localStorage.setItem(STORAGE_KEY, JSON.stringify(this.events))
     }
   }

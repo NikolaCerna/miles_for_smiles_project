@@ -11,9 +11,8 @@ const CART_KEY = 'miles_for_smiles_cart'
 export const useCartStore = defineStore('cartStore', {
   state: (): { products: Product[]; cart: CartItem[] } => ({
     products,
-    cart: JSON.parse(localStorage.getItem(CART_KEY)) || []
+    cart: JSON.parse(localStorage.getItem(CART_KEY) || '[]')
   }),
-
   getters: {
     totalItems(state): number {
       return state.cart.reduce((sum, item) => sum + item.quantity, 0)
@@ -25,12 +24,10 @@ export const useCartStore = defineStore('cartStore', {
       )
     }
   },
-
   actions: {
     saveCart(): void {
       localStorage.setItem(CART_KEY, JSON.stringify(this.cart))
     },
-
     addToCart(product: Product) {
       const existing = this.cart.find(item => item.id === product.id)
       if (existing) {
@@ -40,7 +37,6 @@ export const useCartStore = defineStore('cartStore', {
       }
       this.saveCart()
     },
-
     increaseQty(id: number) {
       const item = this.cart.find(i => i.id === id)
       if (item) {
@@ -48,11 +44,9 @@ export const useCartStore = defineStore('cartStore', {
         this.saveCart()
       }
     },
-
     decreaseQty(id: number) {
       const item = this.cart.find(i => i.id === id)
       if (!item) return
-
       if (item.quantity > 1) {
         item.quantity--
       } else {
@@ -60,7 +54,6 @@ export const useCartStore = defineStore('cartStore', {
       }
       this.saveCart()
     },
-
     clearCart() {
       this.cart = []
       this.saveCart()

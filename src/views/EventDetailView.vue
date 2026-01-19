@@ -16,14 +16,7 @@
         <input type="number" min="1" v-model.number="kilometers" placeholder="Zadaj počet km"/>
         <button @click="addKm" :disabled="isDisabled" >Pridať kilometre</button>
       </div>
-      <v-alert
-      v-if="showThanks"
-      type="success"
-      variant="tonal"
-      class="mb-4"
-    >
-      💚 Ďakujeme! Tvoje kilometre boli úspešne pridané.
-    </v-alert>
+      <v-alert v-if="showThanks" type="success" variant="tonal" class="mb-4">💚 Ďakujeme! Tvoje kilometre boli úspešne pridané.</v-alert> <!--Vuetify-->
     </div>
   </div>
 </template>
@@ -32,7 +25,6 @@
 import { useEventStore } from '@/stores/eventStore'
 import ProgressBar from '@/components/ProgressBar.vue'
 import { useUserStore } from '@/stores/userStore'
-
 
 export default {
   name: 'EventDetailView',

@@ -19,17 +19,9 @@
             <div class="payment-info">
               <p><strong>Spôsob platby:</strong> Dobierka</p>
               <p><strong>Miesto vyzdvihnutia:</strong></p>
-              <p>
-                Odberné miesto Miles for Smiles<br />
-                Študentská 12<br />
-                811 01 Bratislava
-              </p>
+              <p>Odberné miesto Miles for Smiles<br />Študentská 12<br />811 01 Bratislava</p>
             </div>
-
-            <button class="pay" @click="pay">
-              Zaplatiť (dobierka)
-            </button>
-
+            <button class="pay" @click="pay">Zaplatiť (dobierka)</button>
         </div>
     </div>
     <div v-else class="thanks">

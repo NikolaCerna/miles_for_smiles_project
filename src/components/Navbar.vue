@@ -1,21 +1,14 @@
 <template>
   <nav class="navbar">
     <div class="navbar-content">
-      <RouterLink to="/" class="logo"> Miles for Smiles </RouterLink>
+      <RouterLink to="/" class="logo">Miles for Smiles</RouterLink>
       <div class="nav-links">
         <RouterLink to="/" exact-active-class="active">Home</RouterLink>
         <RouterLink to="/events" exact-active-class="active">Behy</RouterLink>
         <RouterLink to="/join" exact-active-class="active">Zapoj sa</RouterLink>
         <RouterLink to="/about" exact-active-class="active">O projekte</RouterLink>
-        <router-link to="/support">Podporte nás</router-link>
-        <router-link to="/cart" class="cart">
-          🛒
-          <span v-if="totalItems > 0" class="badge">
-            {{ totalItems }}
-          </span>
-        </router-link>
-
-
+        <RouterLink to="/support">Podporte nás</RouterLink>
+        <RouterLink to="/cart" class="cart">🛒<span v-if="totalItems > 0" class="badge">{{ totalItems }}</span></RouterLink>
       </div>
     </div>
   </nav>

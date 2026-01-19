@@ -1,26 +1,13 @@
 <template>
   <div class="page">
     <h1>Podporte nás 💚</h1>
-
     <div class="products">
-      <div
-        v-for="product in cartStore.products"
-        :key="product.id"
-        class="product-card"
-      >
-        <img
-          :src="product.image"
-          :alt="product.name"
-          class="product-image"
-        />
-
+      <div v-for="product in cartStore.products" :key="product.id" class="product-card">
+        <img :src="product.image" :alt="product.name" class="product-image"/>
         <h3>{{ product.name }}</h3>
         <p class="desc">{{ product.description }}</p>
         <p class="price">{{ product.price }} €</p>
-
-        <button @click="cartStore.addToCart(product)">
-          Pridať do košíka
-        </button>
+        <button @click="cartStore.addToCart(product)">Pridať do košíka</button>
       </div>
     </div>
   </div>
@@ -122,5 +109,4 @@ button {
 button:hover {
   background: #43a047;
 }
-
 </style>

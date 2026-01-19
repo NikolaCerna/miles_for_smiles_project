@@ -2,14 +2,14 @@
   <div class="page not-found">
     <h1>404</h1>
     <p>Stránka, ktorú hľadáš, neexistuje.</p>
-
-    <router-link to="/" class="home-link">
-      Späť na domov
-    </router-link>
+    <RouterLink to="/" class="home-link">Späť na domov</RouterLink>
   </div>
 </template>
 
 <script>
+import { RouterLink } from 'vue-router';
+
+
 export default {
   name: 'NotFoundView'
 }
