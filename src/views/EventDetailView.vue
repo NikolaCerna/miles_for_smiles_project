@@ -18,9 +18,6 @@
       </div>
     </div>
   </div>
-  <div class="page" v-else>
-    <p>Beh sa nenašiel.</p>
-  </div>
 </template>
 
 <script>
@@ -56,6 +53,14 @@ export default {
     }
   },
   watch: {
+    event: {
+      immediate: true,
+      handler(newEvent) {
+        if (!newEvent) {
+          this.$router.replace({ name: 'not-found' })
+        }
+      }
+    },
     kilometers(newValue) {
       if (newValue < 0) {
         this.kilometers = 0
@@ -64,7 +69,7 @@ export default {
       if (newValue > this.user.availableKm) {
         this.kilometers = this.user.availableKm
       }
-    }
+    },
   },
   methods: {
     addKm() {

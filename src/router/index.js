@@ -32,13 +32,22 @@ const router = createRouter({
     {
       path: '/support',
       name: 'support',
-      component: () => import('@/views/SupportView.vue')
+      component: () => import('../views/SupportView.vue')
     },
     {
       path: '/cart',
       name: 'cart',
-      component: () => import('@/views/CartView.vue')
-    }
+      component: () => import('../views/CartView.vue')
+    },
+    {
+    path: '/404',
+    name: 'not-found',
+    component: () => import('@/views/NotFoundView.vue')
+  },
+  {
+    path: '/:pathMatch(.*)*',
+    redirect: '/404'
+  }
   ],
 })
 
