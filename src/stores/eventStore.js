@@ -4,31 +4,105 @@ const STORAGE_KEY = 'miles_for_smiles_events'
 
 export const useEventStore = defineStore('eventStore', {
   state: () => ({
-    events: JSON.parse(localStorage.getItem(STORAGE_KEY)) || [
+        events: JSON.parse(localStorage.getItem(STORAGE_KEY)) || [
       {
         id: 1,
         title: 'Beh pre detský úsmev',
         slug: 'beh_pre_detsky_usmev',
         description: 'Charitatívny beh na podporu detí v nemocniciach.',
         date: '15. máj 2026',
-        totalKm: 150
+        totalKm: 151
       },
       {
         id: 2,
         title: 'Kilometre nádeje',
         slug: 'kilometre_nadeje',
-        description: 'Každý kilometer pomáha tým, ktorí to potrebujú.',
+        description: 'Každý kilometer pomáha rodinám, ktoré prechádzajú náročným obdobím.',
         date: '1. jún 2026',
-        totalKm: 200
+        totalKm: 208
       },
       {
         id: 3,
         title: 'Miles for Smiles',
         slug: 'miles_for_smiles',
-        description: 'Spojme sa a pomôžme úsmevom cez pohyb.',
+        description: 'Pohybom pomáhame rozdávať úsmevy tam, kde sú najviac potrebné.',
         date: '20. jún 2026',
-        totalKm: 80
-      }
+        totalKm: 84
+      },
+
+      {
+        id: 4,
+        title: 'Kilometre pre detské srdcia',
+        slug: 'kilometre_pre_detske_srdcia',
+        description: 'Podpora liečby detí so srdcovými ochoreniami.',
+        date: '1. júl 2026',
+        totalKm: 168
+      },
+      {
+        id: 5,
+        title: 'Beh pre Emku',
+        slug: 'beh_pre_emku',
+        description: 'Pomoc malej Emke v boji s vážnym ochorením.',
+        date: '10. júl 2026',
+        totalKm: 684
+      },
+      {
+        id: 6,
+        title: 'Kroky pre Jakubka',
+        slug: 'kroky_pre_jakubka',
+        description: 'Rehabilitácie a podpora pre Jakubka po náročnej operácii.',
+        date: '20. júl 2026',
+        totalKm: 157
+      },
+      {
+        id: 7,
+        title: 'Beh pre úsmev v nemocnici',
+        slug: 'beh_pre_usmev_v_nemocnici',
+        description: 'Spríjemnime deťom dlhé dni strávené v nemocničnom prostredí.',
+        date: '1. august 2026',
+        totalKm: 367
+      },
+      {
+        id: 8,
+        title: 'Kroky nádeje pre malých bojovníkov',
+        slug: 'kroky_nadeje_pre_malych_bojovnikov',
+        description: 'Podpora detí liečiacich sa na onkologických oddeleniach.',
+        date: '15. august 2026',
+        totalKm: 158
+      },
+
+      {
+        id: 9,
+        title: 'Beh pre Martina',
+        slug: 'beh_pre_martina',
+        description: 'Pomoc mladému mužovi po vážnom úraze pri návrate do života.',
+        date: '1. september 2026',
+        totalKm: 952
+      },
+      {
+        id: 10,
+        title: 'Kilometre pre Silviu',
+        slug: 'kilometre_pre_silviu',
+        description: 'Podpora liečby a rehabilitácií pre Silviu bojujúcu s rakovinou.',
+        date: '10. september 2026',
+        totalKm: 359
+      },
+      {
+        id: 11,
+        title: 'Beh za duševné zdravie',
+        slug: 'beh_za_dusevne_zdravie',
+        description: 'Podpora ľudí bojujúcich s úzkosťami a depresiami.',
+        date: '20. september 2026',
+        totalKm: 5
+      },
+      {
+        id: 12,
+        title: 'Kroky pre lepší zajtrajšok',
+        slug: 'kroky_pre_lepsi_zajtrajsok',
+        description: 'Pomoc dospelým pacientom po náročných operáciách.',
+        date: '1. október 2026',
+        totalKm: 128
+      },
     ]
   }),
   getters: {
