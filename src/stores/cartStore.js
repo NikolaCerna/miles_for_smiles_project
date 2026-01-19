@@ -1,5 +1,5 @@
 import { defineStore } from 'pinia'
-import products from '@/assets/products.json'
+import products from '@/data/products.json'
 
 const CART_KEY = 'miles_for_smiles_cart'
 
