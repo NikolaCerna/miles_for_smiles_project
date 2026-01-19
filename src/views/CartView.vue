@@ -16,7 +16,20 @@
                 </div>
             </div>
             <h2>Spolu: {{ cartStore.totalPrice }} €</h2>
-            <button class="pay" @click="pay">Zaplatiť (dobierka)</button>
+            <div class="payment-info">
+              <p><strong>Spôsob platby:</strong> Dobierka</p>
+              <p><strong>Miesto vyzdvihnutia:</strong></p>
+              <p>
+                Odberné miesto Miles for Smiles<br />
+                Študentská 12<br />
+                811 01 Bratislava
+              </p>
+            </div>
+
+            <button class="pay" @click="pay">
+              Zaplatiť (dobierka)
+            </button>
+
         </div>
     </div>
     <div v-else class="thanks">
@@ -86,4 +99,18 @@ export default {
   text-align: center;
   margin-top: 3rem;
 }
+
+.payment-info {
+  background: #1f1f1f;
+  color: #ddd;
+  padding: 1rem;
+  border-radius: 8px;
+  margin: 1.2rem 0;
+  font-size: 0.9rem;
+}
+
+.payment-info strong {
+  color: #4CAF50;
+}
+
 </style>
