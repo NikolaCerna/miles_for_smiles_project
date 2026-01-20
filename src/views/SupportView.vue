@@ -3,7 +3,7 @@
     <h1>Podporte nás 💚</h1>
     <div class="products">
       <div v-for="product in cartStore.products" :key="product.id" class="product-card">
-        <img :src="product.image" :alt="product.name" class="product-image"/>
+        <img :src="imageSrc(product)" :alt="product.name" class="product-image"/>
         <h3>{{ product.name }}</h3>
         <p class="desc">{{ product.description }}</p>
         <p class="price">{{ product.price }} €</p>
@@ -21,6 +21,11 @@ export default {
   computed: {
     cartStore() {
       return useCartStore()
+    }
+  },
+  methods: {
+    imageSrc(product) {
+      return import.meta.env.BASE_URL + product.image
     }
   }
 }
