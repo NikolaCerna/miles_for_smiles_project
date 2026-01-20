@@ -6,8 +6,8 @@
 </template>
 
 <script>
-import { useEventStore } from '@/stores/eventStore'
-import EventList from '@/components/EventList.vue'
+import { useEventStore } from '../stores/eventStore'
+import EventList from '../components/EventList.vue'
 
 export default {
   name: 'EventsView',

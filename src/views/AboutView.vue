@@ -27,21 +27,10 @@
 </template>
 
 <script>
-import faq from '@/data/faq.json'
-import FaqItem from '@/components/FaqItem.vue'
-
 export default {
-  name: 'AboutView',
-  components: { FaqItem },
-  inject: ['contactInfo'],
-  data() {
-    return {
-      faq
-    }
-  }
+  name: 'AboutView'
 }
 </script>
-
 
 <style scoped>
 .about {

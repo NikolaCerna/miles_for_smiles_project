@@ -19,6 +19,7 @@
             <div class="payment-info">
               <p><strong>Spôsob platby:</strong> Dobierka</p>
               <p><strong>Miesto vyzdvihnutia:</strong> {{ contactInfo.address }}</p>
+              <p><strong>Čas vyzdvihnutia:</strong> {{ contactInfo.openDays }}: {{ contactInfo.openHours }}</p>
               <p><strong>Kontakt:</strong> {{ contactInfo.phone }}, {{ contactInfo.email }}</p>
             </div>
             <button class="pay" @click="pay">Zaplatiť (dobierka)</button>
@@ -32,7 +33,7 @@
 </template>
 
 <script>
-import { useCartStore } from '@/stores/cartStore'
+import { useCartStore } from '../stores/cartStore'
 
 export default {
   name: 'CartView',

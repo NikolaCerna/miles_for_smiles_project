@@ -7,8 +7,8 @@
 </template>
 
 <script>
-import Navbar from '@/components/Navbar.vue'
-import Footer from '@/components/Footer.vue'
+import Navbar from '../src/components/Navbar.vue'
+import Footer from '../src/components/Footer.vue'
 
 export default {
   name: 'App',
@@ -20,10 +20,11 @@ export default {
     return {
       contactInfo: {
         email: 'info@milesforsmiles.sk',
-        phone: '+421 900 123 456',
+        phone: '+421 900 123 457',
         address: 'Dobrovoľnícka 12, 811 09 Bratislava',
         pickupPlace: 'Dobrovoľnícka 12, Bratislava',
-        pickupHours: 'Po–Pi: 10:00 – 18:00'
+        openDays: 'Po-Pi',
+        openHours: '10:00 - 19:00'
       }
     }
   }

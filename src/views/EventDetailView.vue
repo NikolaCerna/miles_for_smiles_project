@@ -25,9 +25,9 @@
 </template>
 
 <script>
-import { useEventStore } from '@/stores/eventStore'
-import ProgressBar from '@/components/ProgressBar.vue'
-import { useUserStore } from '@/stores/userStore'
+import { useEventStore } from '../stores/eventStore'
+import ProgressBar from '../components/ProgressBar.vue'
+import { useUserStore } from '../stores/userStore'
 
 export default {
   name: 'EventDetailView',

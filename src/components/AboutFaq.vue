@@ -1,42 +1,75 @@
 <template>
   <section class="faq">
     <h2>Časté otázky</h2>
-    <FaqItem v-for="item in faq" :key="item.id" :question="item.question">
-    <template v-if="item.type === 'text'">{{ item.answer }}</template>
-    <template v-else-if="item.type === 'address'">Nájdete nás na adrese: <strong>{{ contactInfo.address }}</strong></template>
-    <template v-else-if="item.type === 'hours'">Otvorené máme: <strong>{{ contactInfo.pickupHours }}</strong></template>
-    <template v-else-if="item.type === 'contact'">📧 {{ contactInfo.email }} <br />📞 {{ contactInfo.phone }}</template>
-    </FaqItem>
+
+    <h4>Ako môžem pomôcť?</h4>
+    <p>Zaznamenávaním svojich kilometrov v rámci charitatívnych výziev.</p>
+
+    <h4>Kde nás môžete nájsť?</h4>
+    <p>{{ contactInfo.address }}</p>
+
+    <h4>Aké sú vaše otváracie hodiny?</h4>
+    <p>{{ contactInfo.openDays }}: {{ contactInfo.openHours }}</p>
+
+    <h4>Ako vás môžem kontaktovať?</h4>
+    <p>
+      📧 {{ contactInfo.email }} <br />
+      📞 {{ contactInfo.phone }}
+    </p>
+
+    <button class="back" @click="$router.back()">← Skryť časté otázky</button>
   </section>
-  <button class="back" @click="$router.back()">
-    ← Skryť časté otázky
-  </button>
 </template>
 
 <script>
-import faq from '@/data/faq.json'
-import FaqItem from '@/components/FaqItem.vue'
-
 export default {
   name: 'AboutFaq',
-  components: { FaqItem },
-  inject: ['contactInfo'],
-  data() {
-    return { faq }
-  }
+  inject: ['contactInfo']
 }
 </script>
 
 <style>
-    .back {
+.faq {
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.faq h2 {
+  color: #4CAF50;
+  font-size: 2rem;
+  margin-top: 2rem;
+}
+
+/* otázky */
+.faq h4 {
+  color: #4CAF50;
+  font-size: 1.2rem;
+  margin-top: 2rem;
+  margin-bottom: 0.4rem;
+}
+
+/* odpovede */
+.faq p {
+  margin-left: 0.5rem;
+  font-size: 1rem;
+  line-height: 1.6;
+  color: #ccc;
+}
+
+/* tlačidlo späť */
+.back {
+  margin-top: 3rem;
   background: none;
   border: none;
   padding: 0;
-  width: auto;
 
   color: #4CAF50;
-  font-size: 0.95rem;
+  font-size: 1rem;
   cursor: pointer;
-  margin-bottom: 1rem;
 }
+
+.back:hover {
+  text-decoration: underline;
+}
+
 </style>

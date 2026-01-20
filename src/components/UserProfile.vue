@@ -10,7 +10,7 @@
 </template>
 
 <script>
-import { useUserStore } from '@/stores/userStore'
+import { useUserStore } from '../stores/userStore'
 
 export default {
   name: 'UserProfile',

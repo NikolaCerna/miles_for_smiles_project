@@ -16,7 +16,7 @@
 
 <script>
 import { RouterLink } from 'vue-router'
-import { useCartStore } from '@/stores/cartStore'
+import { useCartStore } from '../stores/cartStore'
 
 export default {
   name: 'Navbar',
@@ -37,7 +37,7 @@ export default {
 <style scoped>
 /* celý navbar */
 .navbar {
-  background-color: #4CAF50; /* zelená */
+  background-color: #4CAF50;
   padding: 1rem 0;
   position: sticky;
   top: 0;
@@ -75,18 +75,15 @@ export default {
   position: relative;
 }
 
-/* hover efekt */
 .nav-links a:hover {
-  color: #033501a6; /* jemná žltá/oranžová */
+  color: #033501a6;
 }
 
-/* aktívna stránka */
 .nav-links a.active {
   border-bottom: 2px solid #03350165;
   padding-bottom: 2px;
 }
 
-/* responzivita */
 @media (max-width: 600px) {
   .navbar-content {
     flex-direction: column;
@@ -109,5 +106,4 @@ export default {
   font-size: 0.75rem;
   font-weight: bold;
 }
-
 </style>

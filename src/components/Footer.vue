@@ -14,9 +14,9 @@
       </div>
       <div class="footer-col">
         <h4>Otváracie hodiny</h4>
-        <p>Pondelok – Piatok</p>
-        <p>10:00 – 18:00</p>
-        <p>Sobota – Nedeľa: zatvorené</p>
+        <p>{{ contactInfo.openDays }}:</p>
+        <p>{{ contactInfo.openHours }}</p>
+        <p>Sobota - Nedeľa: zatvorené</p>
       </div>
     </div>
   </footer>
@@ -58,14 +58,12 @@ export default {
   opacity: 0.9;
 }
 
-/* TABLET */
 @media (max-width: 900px) {
   .footer-content {
     grid-template-columns: 1fr 1fr;
   }
 }
 
-/* MOBIL */
 @media (max-width: 600px) {
   .footer-content {
     grid-template-columns: 1fr;

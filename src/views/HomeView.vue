@@ -51,7 +51,7 @@ export default {
       rgba(0, 0, 0, 0.4),
       rgba(0, 0, 0, 0.4)
     ),
-    url('/hero.jpg'); /* fotku pridáme */
+    url('/hero.jpg');
   background-size: cover;
   background-position: center;
 
@@ -89,7 +89,6 @@ export default {
   background-color: #fb8c00;
 }
 
-/* SEKCIJE */
 .section {
   padding: 4rem 1rem;
   text-align: center;
@@ -110,7 +109,6 @@ export default {
   color: white;
 }
 
-/* KROKY */
 .steps {
   display: flex;
   flex-wrap: wrap;
@@ -124,10 +122,8 @@ export default {
   max-width: 300px;
 }
 
-/* BENEFITY */
 .benefits {
   font-size: 1.1rem;
   line-height: 2;
 }
-
 </style>

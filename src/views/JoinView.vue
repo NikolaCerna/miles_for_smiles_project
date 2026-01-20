@@ -1,7 +1,7 @@
 <template>
   <div class="page">
     <h1>Zapoj sa</h1>
-    <UserProfile :availableKm="250" />
+    <UserProfile/>
     <div class="steps">
       <div class="step">
         <h3>1️⃣ Vyber si beh</h3>
@@ -22,7 +22,7 @@
 
 <script>
 import { RouterLink } from 'vue-router'
-import UserProfile from '@/components/UserProfile.vue'
+import UserProfile from '../components/UserProfile.vue'
 
 export default {
   name: 'JoinView',
